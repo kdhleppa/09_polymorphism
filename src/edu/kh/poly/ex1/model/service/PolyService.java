@@ -187,12 +187,48 @@ public class PolyService {
 			System.out.println("성공");
 			
 		} else {
-			System.out.println("실패 (Spark타입이 아님");
+			System.out.println("실패 (Spark타입이 아님)");
 			
 		}
 		
 		System.out.println();
 		
 		
+	}
+	
+	public void ex5() {
+		// 바인딩 (Binding)
+		// 실제 실행할 메소드 코드와 호출하는 코드를 연결 시키는것
+		
+		Car c1 = new Car("경유엔진", "경유", 8);
+		
+		System.out.println( c1.getEngine());
+		// Car 객체에 있는 getEnging() 메소드를 호출 == 바인딩
+		// String edu.kh.poly.ex1.model.vo.Car.getEngine()
+		
+		// 프로그램 "실행 전"
+		// - 컴파일러는 getEngine() 메소드가 Car에 있는걸로 인식해서
+		// c1.getEngine()호출코드와
+		// String edu.kh.poly.ex1.model.vo.Car.getEngine() 메소드 코드를 연결
+		// -> 정적 바인딩
+		
+		System.out.println( c1.toString());
+		// String edu.kh.poly.ex1.model.vo.Car.toString()
+		// Car 참조변수 c1을 이용해서
+		// Car 객체에 있는 오버라이딩된 toString() 메소드를 호출
+		
+		// ** 다향성 적용시 바인딩 **
+		Car c2 = new Spark("경차엔진","휘발유",4,0.5);
+		// 업캐스팅 적용 -> 부모 부분만 참조 가능한 상태
+		Spark c3 = new Spark("경", "휘", 4, 0.5);
+		System.out.println( c2.toString());
+		System.out.println( c3.exexex());
+		// String edu.kh.poly.ex1.model.vo.Car.toString()
+		// 참조변수 c2가 Car타입이므로
+		// toStinrg()도 Car의 toString()을 호출 - 정적 바인딩
+		
+		// 하지만 실행해보면 자식(Spark)의 toString()이 호출되는것을 확인
+		// -> 컴파일 시에는 부모(Car)와 바인딩
+		// -> "실행 시" 에는 자식(Spark)의 오버라이딩된 메소드와 바인딩
 	}
 }

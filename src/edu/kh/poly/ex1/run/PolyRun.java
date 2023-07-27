@@ -8,7 +8,7 @@ public class PolyRun {
 		PolyService poly = new PolyService();
 		
 		
-		poly.ex4();
+		poly.ex5();
 		
 
 	}

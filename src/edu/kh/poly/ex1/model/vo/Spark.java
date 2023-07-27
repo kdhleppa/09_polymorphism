@@ -19,9 +19,13 @@ public class Spark extends Car {
 		this.discountOffer = discountOffer;
 	}
 	
+	public String exexex() {
+		return "exe";
+	}
+	
 	@Override
 	public String toString() {
-		return super.toString()  + " / " + discountOffer;
+		return super.toString()  + " / " + discountOffer+ exexex();
 		
 	}
 
